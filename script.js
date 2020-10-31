@@ -1,4 +1,7 @@
 const prompt = require("prompt-sync")({sigint: true});
+const fs = require('fs');
+
+const data = fs.readFileSync('./ASCIIart.txt', 'utf8');
 
 const messages = {
     day: ["wonderful", "beautiful", "gloomy", "bad", "splendid", "horrible", "nice", "bright", "happy", "pleasant"],
@@ -17,7 +20,7 @@ function generateRandomMessage() {
     do {
         notTodoMessage = messages.todo[generateRandomIndex(messages.todo)];
     } while (notTodoMessage === todoMessage);
-    console.log("Welcome to ~Fortune of the Day~!\n");
+    console.log(data);
     userName = prompt("What's your name? ");
     finalMessage = `\nHello ${userName}!\n\nHere's what the day brings for you:\n\nIt's a ${dayMessage} day. You should definitely ${todoMessage} and do not ${notTodoMessage}!`;
     console.log(finalMessage);
