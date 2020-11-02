@@ -3,17 +3,19 @@ const fs = require('fs');
 
 const welcomeMessage = fs.readFileSync('./ASCIIart.txt', 'utf8');
 
+// Setting and formating today's date
 const today = new Date();
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const day = days[today.getDay()];
 const date = today.getDate();
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const month = months[today.getMonth()];
 const year = today.getFullYear();
 
+// Messages object with arrays of message parts to be chosen from
 const messages = {
     day: ["wonderful", "beautiful", "gloomy", "bad", "splendid", "horrible", "nice", "bright", "happy", "pleasant"],
-    todo: ["spend time with friends/family", "stay at home", "go outside", "watch Netflix", "be productive", "workout", "have some cake", "take a spa day", "read a book", "have a drink"]
+    todo: ["spend time with friends/family", "stay at home", "go outside", "watch Netflix", "be productive", "workout", "have some cake", "take a spa day", "read a book", "have a drink"],
 }
 
 function generateRandomIndex(arr) {
@@ -28,8 +30,8 @@ function generateRandomMessage() {
     do {
         notTodoMessage = messages.todo[generateRandomIndex(messages.todo)];
     } while (notTodoMessage === todoMessage);
-    console.log(welcomeMessage);
-    userName = prompt("What's your name? ");
+    console.log(welcomeMessage);                // Adding some ASCII art
+    userName = prompt("What's your name? ");    // Prompting for the user's name
     finalMessage = `\nHello ${userName}!\n\nIt's ${day}, ${month} ${date}, ${year}.\nHere's what the day brings for you:\n\nIt's a ${dayMessage} day. You should definitely ${todoMessage} and do not ${notTodoMessage}!`;
     console.log(finalMessage);
 }
