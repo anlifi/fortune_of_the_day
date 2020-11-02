@@ -1,7 +1,15 @@
 const prompt = require("prompt-sync")({sigint: true});
 const fs = require('fs');
 
-const data = fs.readFileSync('./ASCIIart.txt', 'utf8');
+const welcomeMessage = fs.readFileSync('./ASCIIart.txt', 'utf8');
+
+const today = new Date();
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+const day = days[today.getDay()];
+const date = today.getDate();
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+const month = months[today.getMonth()];
+const year = today.getFullYear();
 
 const messages = {
     day: ["wonderful", "beautiful", "gloomy", "bad", "splendid", "horrible", "nice", "bright", "happy", "pleasant"],
@@ -20,9 +28,9 @@ function generateRandomMessage() {
     do {
         notTodoMessage = messages.todo[generateRandomIndex(messages.todo)];
     } while (notTodoMessage === todoMessage);
-    console.log(data);
+    console.log(welcomeMessage);
     userName = prompt("What's your name? ");
-    finalMessage = `\nHello ${userName}!\n\nHere's what the day brings for you:\n\nIt's a ${dayMessage} day. You should definitely ${todoMessage} and do not ${notTodoMessage}!`;
+    finalMessage = `\nHello ${userName}!\n\nIt's ${day}, ${month} ${date}, ${year}.\nHere's what the day brings for you:\n\nIt's a ${dayMessage} day. You should definitely ${todoMessage} and do not ${notTodoMessage}!`;
     console.log(finalMessage);
 }
 

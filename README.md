@@ -8,8 +8,8 @@
 * [Contact](#contact)
 
 ## General Info
-This is a random massage generator program. Everytime the program is run, it outputs a new random message.\
-It is my first portfolio project running on Node.js using JavaScript, Git and GitHub.
+This is a random massage generator program. Everytime the program is run, it prompts for the user's name and outputs today's date and a new (random) fortune of the day.\
+It is my first small project running on Node.js using JavaScript, Git and GitHub.
 
 ## Technologies
 This project is created with:
@@ -17,7 +17,7 @@ This project is created with:
 * Node.js - 12.19.0
 
 ## Inspiration
-This project is based on the "Mixed Messages" project from [Codecademy](https://www.codecademy.com/).
+The project is based on the "Mixed Messages" project from [Codecademy](https://www.codecademy.com/).
 
 ## Contact
 GitHub [@anlifi](https://github.com/anlifi)
