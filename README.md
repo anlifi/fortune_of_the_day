@@ -1,5 +1,5 @@
 # Fortune of the Day
-> A random message generator giving very useful advise for your day!
+> A random message generator that gives you "very" useful advise for your day!
 
 ## Table of Contents
 * [General Info](#general-info)
